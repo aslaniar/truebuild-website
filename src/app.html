@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="text-scale" content="scale" />
+		<meta name="theme-color" content="#12100c" />
+		<link rel="icon" href="/favicon-64.png" sizes="64x64" />
+		<link rel="icon" href="/icon-512.png" sizes="512x512" media="(prefers-color-scheme: light)" />
+		<link
+			rel="icon"
+			href="/icon-512-dark.png"
+			sizes="512x512"
+			media="(prefers-color-scheme: dark)"
+		/>
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		<script>
+			// Resolve the theme before first paint so there is no flash of the wrong ground.
+			(function () {
+				try {
+					var saved = localStorage.getItem('tb-theme');
+					var theme =
+						saved || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+					document.documentElement.setAttribute('data-theme', theme);
+				} catch (e) {
+					/* private mode — keep the dark default */
+				}
+			})();
+		</script>
+		%sveltekit.head%
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">%sveltekit.body%</div>
+	</body>
+</html>
