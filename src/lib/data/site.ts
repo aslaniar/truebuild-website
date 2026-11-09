@@ -18,11 +18,13 @@ export const company = {
 	email: 'TrueBuildCorp@gmail.com',
 
 	address: {
-		street: '9134 Sepulveda Blvd. Unit #2716',
-		city: 'North Hills',
+		street: '4100 W. Alameda Avenue Suite #326',
+		city: 'Burbank',
 		state: 'CA',
-		zip: '91393'
+		zip: '91505'
 	},
+
+	url: 'https://truebuildcorp.com',
 
 	license: 'CSLB Lic. #1126490',
 	licenseNumber: '1126490',

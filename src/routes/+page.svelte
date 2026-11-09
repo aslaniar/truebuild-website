@@ -27,6 +27,7 @@
 		name: company.legalName,
 		alternateName: company.name,
 		description,
+		url: company.url,
 		telephone: company.phone,
 		email: company.email,
 		founder: { '@type': 'Person', name: company.owner, jobTitle: company.ownerTitle },
@@ -69,6 +70,8 @@
 	<meta property="og:type" content="website" />
 	<meta property="og:locale" content="en_US" />
 	<meta name="twitter:card" content="summary_large_image" />
+	<link rel="canonical" href={company.url} />
+	<meta property="og:url" content={company.url} />
 	{@html `<script type="application/ld+json">${JSON.stringify(jsonLd)}<\/script>`}
 	{@html `<script type="application/ld+json">${JSON.stringify(faqLd)}<\/script>`}
 </svelte:head>
